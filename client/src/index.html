@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="hackerearth">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Codetable</title>
+    <link rel="stylesheet" href="assests/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="vendor/angular.min.js"></script>
+    <script src="vendor/angular-route.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body data-ng-controller="CodeTableController">{{code}}
+<div class="bl-page">
+    <div class="left">
+        <div class="editor-container">
+            <div class="editor-extras">
+                <div class="float-left select-lang">
+                    <select name="repeatSelect" id="repeatSelect" ng-model="selectLanguage">
+                        <option ng-repeat="option in availableOptions" value="{{option.id}}">{{option.name}}</option>
+                    </select>
+                </div><!-- select-lang-->
+                <div class="clear"></div>
+            </div><!-- editor-extras -->
+
+            <!-- commentttt -->
+            <pre id="editor" style="height: 300px;">function foo(items) {
+                var i;
+                for (i = 0; i &lt; items.length; i++) {
+                alert("Ace Rocks " + items[i]);
+                }
+            }</pre>
+            <!-- commentttt -->
+
+        </div><!-- editor-container -->
+        <div class="test-input-check medium-margin">
+            <input name="test-input-checkbox" type="checkbox" ng-model="testInput">
+            <span class="test-input-checkbox-text body-font light">Use custom input for testing your code</span>
+            <div class="test-input-container medium-margin" ng-show="testInput">
+                <textarea id="test-input" class="nice-textarea" ng-model="testInputText"></textarea>
+            </div>
+            <hr class="hr">
+        </div><!-- test-input-check-->
+        <div class="compile-and-test">
+            <div class="float-right medium-margin-left">
+                <button type="button" class="button btn-green" ng-click="compileAndRun(editor.getValue())">Compile and Run</button>
+            </div>
+            <div class="clear"></div>
+        </div> <!-- compile and test -->
+        <div class="dots-loader"></div>
+        <div id="run-result" class="medium-margin body-font">
+            <div class="error-output"></div>
+            <div id="output" class="output hidden" style="display: block;">
+                <div replacedata="false" class="content-heading-bold">Output</div>
+                <hr class="hr">
+                <div class="less-margin">
+
+        <pre>Hello World!</pre>
+
+                </div>
+                <div class="content-heading-bold medium-margin">Input</div>
+                <hr class="hr">
+                <div class="less-margin">
+
+                    <pre class="light">Standard input is empty</pre>
+
+                </div>
+                <div class="float-left col">
+                    <div class="content-heading-bold"> Log ID: 11309266
+                    </div>
+                    <div class="less-margin body-font dark"> June 09, 2016 at 12:52 AM
+                    </div>
+                </div>
+                <div class="float-left col">
+                    <div class="content-heading-bold">Time (sec)
+                    </div>
+                    <div class="less-margin body-font dark"> 0.100921
+                    </div>
+                </div>
+                <div class="float-left col">
+                    <div class="content-heading-bold"> Memory (KB)
+                    </div>
+                    <div class="less-margin body-font dark"> 64
+                    </div>
+                </div>
+                <div class="float-left col">
+                    <div class="content-heading-bold"> Status
+                    </div>
+                    <div class="less-margin body-font dark"> AC
+                    </div>
+                </div>
+                <div class="float-left col">
+                    <div class="content-heading-bold"> Status Detail
+                    </div>
+                    <div class="less-margin body-font dark"> NA
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            </div>
+        </div><!-- left -->
+    <div class="right">
+        <div class="share-url standard-margin">
+            <div class="right-panel-heading">
+                Share URL
+            </div>
+            <hr class="hr">
+            <!--<div class="read-only float-left">-->
+                <!--<input type="checkbox" name="read-only" value="read-only">-->
+                <!--<div class="read-only-text">Read only URL</div>-->
+            <!--</div>-->
+            <!--<div class="read-write float-left">-->
+                <!--<input type="checkbox" name="read-write" value="read-write">-->
+                <!--<div class="read-write-text">Read &amp; Write URL</div>-->
+            <!--</div>-->
+            <div class="clear"></div>
+            <div class="generate-public-url button btn-gray float-left" onclick="share('0570aaL');return false;"> Generate Public url </div>
+            <div class="clear"></div>
+            <div class="result">
+                <div class="result-read-only less-margin-2">
+                    <span class="hidden result-read-only-msg">Read Only: </span>
+                    <a href="" target="_blank" class="result-read-only-url"></a>
+                </div>
+                <div class="result-read-write less-margin-2">
+                    <span class="hidden result-read-write-msg">Read write: </span>
+                    <a href="" target="_blank" class="result-read-write-url"></a>
+                </div>
+            </div>
+            <!--<div class="share-url-error-msg less-margin-bottom">-->
+                <!--Choose URL preference-->
+            <!--</div>-->
+        </div>
+    </div> <!-- right -->
+    <div class="clear"></div>
+</div><!--page-->
+
+
+
+<script src="vendor/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    var code = editor.getValue();
+</script>
+
+
+</body>
+</html>
+
+
+

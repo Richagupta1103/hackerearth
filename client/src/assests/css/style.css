@@ -1,0 +1,498 @@
+@font-face {
+    font-family: Rockwell;
+    src: url("../fonts/Rockwell.ttf")
+}
+
+html {
+    font-size: 16px;
+    overflow-y: scroll;
+}
+body {
+        overflow: hidden;
+        height:1000px
+    }
+#editor {
+    margin: 0;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+a {
+    cursor: pointer
+}
+
+strong,
+b {
+    font-weight: 600
+}
+
+.clear {
+    clear: both
+}
+
+.clear-both {
+    clear: both
+}
+
+.forced-hidden {
+    display: none!important
+}
+
+.not-visible {
+    visibility: hidden
+}
+
+.caps {
+    text-transform: uppercase
+}
+
+.lower {
+    text-transform: lowercase
+}
+
+.strike {
+    text-decoration: line-through
+}
+
+.no-underline {
+    text-decoration: none!important
+}
+
+.yes-underline {
+    text-decoration: underline!important
+}
+
+.lineh-21 {
+    line-height: 21px
+}
+
+.no-border {
+    border: 0
+}
+
+.hover-link {
+    text-decoration: none
+}
+
+.hover-link:hover {
+    text-decoration: underline
+}
+
+.tags-blue-box {
+    background-color: #e0f2f6;
+    padding: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.bold {
+    font-weight: 600
+}
+
+.rockwell {
+    font-family: Rockwell
+}
+
+.block {
+    display: block
+}
+
+.inline-block {
+    display: inline-block
+}
+
+.hidden {
+    display: none
+}
+
+.italic {
+    font-style: italic
+}
+
+.strikethrough {
+    text-decoration: line-through
+}
+
+.error-text {
+    color: #b11616!important
+}
+
+.error-link {
+    color: #b11616;
+    text-decoration: underline
+}
+
+.error-link:hover {
+    color: #4c9cdf
+}
+
+.red-link {
+    color: #b11616;
+    text-decoration: none
+}
+
+.red-link:hover {
+    text-decoration: underline
+}
+
+.green-info-text {
+    color: #75c02b
+}
+
+.link-text {
+    color: #4c9cdf
+}
+
+.no-padding {
+    padding: 0
+}
+
+.no-margin {
+    margin: 0
+}
+
+.no-list-style {
+    list-style-type: none;
+    padding: 0;
+    margin: 0
+}
+
+.no-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0
+}
+
+.no-list li {
+    float: left
+}
+
+.float-right {
+    float: right
+}
+
+.float-left {
+    float: left
+}
+
+body {
+    font-size: 10px;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    word-spacing: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-font-smoothing: antialiased
+}
+
+textarea {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+}
+
+textarea.nice-textarea {
+    border: 3px solid #ccc;
+    padding: 5px;
+}
+
+input[type=submit] {
+    -webkit-appearance: none;
+}
+
+a {
+    color: #4c9cdf;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+hr.border-line{display:block;height:1px;border:0;border-top:1px solid #e5e7e8;padding:0;width:100%}
+hr.hr{display:block;height:1px;border:0;border-top:1px solid #e5e7e8;padding:0;width:100%}
+hr.hr-dashed{display:block;height:1px;border:0;border-top:1px dashed #e5e7e8;padding:0;width:100%}
+.medium-margin{margin:20px 0 0 0}
+.content-heading-bold{color:#252c33;font-size:14px;font-weight:600}
+
+.bl-page .right {
+    opacity: .75;
+}
+
+.bl-page .right:hover {
+    opacity: 1
+}
+
+.bl-page {
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 1000px;
+    margin-top: 50px
+}
+
+.bl-page .left {
+    width: 780px;
+    margin-right: 60px;
+    float: left;
+    padding-bottom: 60px
+}
+
+.bl-page .right {
+    width: 260px;
+    float: left;
+    padding-bottom: 60px
+}
+.bl-page {
+    min-height: 0
+}
+
+.bl-page .filename-bar .filename {
+    font-size: 18px;
+    font-weight: 600;
+    color: #252c33;
+    cursor: pointer;
+    line-height: 27px
+}
+
+.bl-page .filename-bar .filename-text form .floating-wrapper {
+    margin-bottom: 0
+}
+
+.bl-page .filename-bar .filename-text form .floating-wrapper input[type=text] {
+    float: left;
+    margin: 0;
+    padding: 5px 8px
+}
+
+.bl-page .filename-bar .filename-text form .floating-wrapper .filename-save {
+    line-height: 18px
+}
+
+.bl-page .filename-bar .filename-text form .floating-wrapper .filename-cancel {
+    cursor: pointer;
+    line-height: 27px
+}
+
+.bl-page .filename-bar .top-icons {
+    font-size: 16px;
+    color: #9ca3aa;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-top: 4px
+}
+
+.bl-page .filename-bar .clone-div {
+    min-width: 60px;
+    height: 20px;
+    line-height: 20px;
+    border: 1px solid #d4d4d4;
+    border-radius: 2px
+}
+
+.bl-page .filename-bar .clone-div .btn-clone {
+    padding: 0 6px;
+    background-color: #e5e7e8;
+    cursor: pointer
+}
+
+.bl-page .filename-bar .clone-div .count-clone {
+    padding: 0 6px;
+    border-left: 1px solid #d4d4d4
+}
+
+.bl-page .left {
+    margin-top: 5px;
+    padding-bottom: 10px
+}
+
+.bl-page .left .editor-container {
+    border: 1px solid #e5e7e8;
+    border-radius: 2px
+}
+
+.bl-page .left .editor-container .editor-extras {
+    height: 35px;
+    border-bottom: 1px solid #e5e7e8;
+    background-color: #f0f0f0
+}
+
+.bl-page .left .editor-container .editor-extras .select-lang {
+    margin: 5px;
+    color: #46535e
+}
+
+.bl-page .left .editor-container .editor-extras .select-lang select {
+    background: #fff;
+    border-radius: 3px;
+    padding: 2px;
+    border: 0 solid #9ca3a8;
+    width: 125px
+}
+
+.bl-page .left .editor-container .editor-extras #save-code {
+    font-size: 12px;
+    height: 20px;
+    margin: 7px 10px 0 0;
+    padding: 0 15px;
+    line-height: 20px;
+    color: #fff;
+    border-radius: 2px;
+    cursor: pointer
+}
+
+.bl-page .left .editor-container #editor {
+    width: 778px;
+    word-spacing: 0!important
+}
+
+.bl-page .left .test-input-check .test-input-container .nice-textarea {
+    border: 1px solid #e5e7e8;
+    width: 768px;
+    height: 100px
+}
+
+.bl-page .left .compile-and-test .running {
+    opacity: .5;
+}
+
+.bl-page .left #run-result .output {
+    border: 1px dashed #ccc;
+    padding: 20px
+}
+
+.bl-page .left #run-result .output .col {
+    width: 15%;
+    margin: 20px 30px 0 0
+}
+
+.bl-page .left .dots-loader {
+    display: none
+}
+
+.bl-page .left .test-input-check .test-input-checkbox-text {
+    cursor: pointer
+}
+
+.bl-page .right {
+    opacity: 1;
+    font-size: 13px
+}
+
+.bl-page .right .right-panel-heading {
+    font-size: 14px;
+    color: #46535e;
+    font-weight: bold
+}
+
+.bl-page .right .share-url .share-url-error-msg {
+    background-color: #fffcdf;
+    padding: 3px 3px 3px 5px
+}
+
+.bl-page .right .share-url .read-only {
+    margin-right: 5px
+}
+
+.bl-page .right .share-url .read-only .read-only-text {
+    color: #46535e;
+    display: inline;
+    cursor: pointer
+}
+
+.bl-page .right .share-url .read-write .read-write-text {
+    color: #46535e;
+    display: inline;
+    cursor: pointer
+}
+
+.bl-page .right .share-url .generate-public-url {
+    font-size: 13px;
+    padding: 2px 13px;
+    margin-top: 10px
+}
+
+.bl-page .right .video-thumbnail {
+    width: 250px
+}
+
+
+
+.ace-crimson-editor .ace_gutter {
+    background: #ebebeb none repeat scroll 0 0;
+    color: #333;
+    overflow: hidden;
+}
+.ace-tm .ace_print-margin {
+    visibility:hidden !important;
+}
+
+
+.body-font {
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif
+}
+.light {
+    color: #9ca3a8
+}
+input.error,
+textarea.error {
+    border: 1px solid #b41414!important
+}
+
+.button,
+.nice-button {
+    padding: 3px 13px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    min-width: 60px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 0;
+    outline: 0
+}
+
+.button:hover,
+.nice-button:hover {
+    text-decoration: none
+}
+
+.button.disabled,
+.nice-button.disabled {
+    background-color: #e5e7e8;
+    cursor: default
+}
+.btn-gray {
+    background: #9ca3a8;
+    border: 1px solid #9ca3a8
+}
+
+.btn-gray:hover {
+    background: #899298;
+    border: 1px solid #899298
+}
+.btn-green {
+    background: #73b369;
+    border: 1px solid #73b369;
+    color: #fff
+}
+
+.btn-green:hover {
+    background: #5a9a50;
+    border: 1px solid #5a9a50
+}
