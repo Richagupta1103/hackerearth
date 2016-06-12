@@ -30,7 +30,6 @@ app.controller('CodeTableController',['$scope','$http', function ($scope,$http) 
         }
         $scope.compiling = true
         $scope.inputData = {}
-        $scope.inputData['async'] = 0
         $scope.inputData['source'] = $scope.source
         $scope.inputData['lang'] = $scope.selectLanguage
         $scope.inputData['input'] = $scope.testInputText
