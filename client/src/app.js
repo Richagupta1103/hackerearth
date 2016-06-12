@@ -10,6 +10,7 @@ app.controller('CodeTableController',['$scope','$http', function ($scope,$http) 
     ]
 
     $scope.selectLanguage = 'C'
+    $scope.date = new Date();
     $scope.testInput = false
     $scope.editor = ace.edit("editor");
     $scope.testInputText = ''

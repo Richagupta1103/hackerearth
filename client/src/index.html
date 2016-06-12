@@ -4,13 +4,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Codetable</title>
     <link rel="stylesheet" href="assests/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="vendor/angular.min.js"></script>
     <script src="vendor/angular-route.js"></script>
     <script src="app.js"></script>
 </head>
 
-<body data-ng-controller="CodeTableController">{{code}}
+<body data-ng-controller="CodeTableController">
 <div class="bl-page">
     <div class="left">
         <div class="editor-container">
@@ -71,7 +70,7 @@ int main()
                 <div class="float-left col">
                     <div class="content-heading-bold"> Log ID: 11309266
                     </div>
-                    <div class="less-margin body-font dark"> June 09, 2016 at 12:52 AM
+                    <div class="less-margin body-font dark"> {{date | date:'yyyy-MM-dd'}}
                     </div>
                 </div>
                 <div class="float-left col">
