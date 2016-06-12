@@ -21,7 +21,7 @@ class CompileAndRun(APIView):
 # api for saving the code
 class SaveCode(APIView):
 
-    def post(self, request):
+    def put(self, request):
         key = request.data.get('key', None)
         source_code = request.data['source']
         lang = request.data['lang']
@@ -42,12 +42,12 @@ class GetCode(APIView):
         key = request.data.get('key', None)
         lang = request.data['lang']
         try:
-            code_table_obj = codetable.objects.get(key=key, language=lang)
             response = {}
+            code_table_obj = codetable.objects.get(key=key, language=lang)
             if code_table_obj is not None:
                 response['code'] = code_table_obj.code
 
         except Exception as e:
             print e
-            return Response({"error":"cannot get data with above data set"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            pass
         return Response(response, status=status.HTTP_200_OK)

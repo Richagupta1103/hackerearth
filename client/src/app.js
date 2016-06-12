@@ -56,6 +56,12 @@ app.controller('CodeTableController',['$scope','$http','$location', function ($s
         }
     }
 
+    // getting data on changing the languages
+    
+    $scope.$watch('selectLanguage', function(newValue, oldValue) {
+        $scope.getData()
+    });
+
     // calling the api for getting the data from database for key, if present
 
     $scope.get_data = {}
@@ -68,7 +74,9 @@ app.controller('CodeTableController',['$scope','$http','$location', function ($s
             data: $scope.get_data,
         }).then(
             function (result) {
-                $scope.editor.setValue(result.data.code, 1)
+                if(result.data.code){
+                    $scope.editor.setValue(result.data.code, 1)
+                }
             },
             function (err) {
                 console.log(err)
@@ -84,7 +92,7 @@ app.controller('CodeTableController',['$scope','$http','$location', function ($s
         $scope.save_data['source'] = $scope.editor.getValue()
         $scope.save_data['key'] =  url_part[3]
         $http({
-            method: 'POST',
+            method: 'PUT',
             url: codetable.base_url+'/save',
             data: $scope.save_data,
         }).then(
