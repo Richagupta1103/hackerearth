@@ -8,6 +8,7 @@ app.controller('CodeTableController',['$scope','$http', function ($scope,$http) 
       {id: 'JAVA', name: 'Java (openjdk 1.7.0_91)'},
       {id: 'PYTHON', name: 'Python (python 2.7.6)'}
     ]
+
     $scope.selectLanguage = 'C'
     $scope.testInput = false
     $scope.editor = ace.edit("editor");
@@ -17,6 +18,9 @@ app.controller('CodeTableController',['$scope','$http', function ($scope,$http) 
     $scope.compiling = false
     $scope.shareUrl = false
     $scope.data = {}
+    $scope.getCode = function(lang){
+        $scope.editor.setValue('', 1)
+    }
     $scope.share = function(){
         if($scope.data){
          $scope.shareUrl = true
@@ -29,6 +33,8 @@ app.controller('CodeTableController',['$scope','$http', function ($scope,$http) 
             return false
         }
         $scope.compiling = true
+        $scope.viewResult = false
+        $scope.compilation = false
         $scope.inputData = {}
         $scope.inputData['source'] = $scope.source
         $scope.inputData['lang'] = $scope.selectLanguage

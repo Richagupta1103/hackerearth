@@ -16,7 +16,7 @@
         <div class="editor-container">
             <div class="editor-extras">
                 <div class="float-left select-lang">
-                    <select name="repeatSelect" id="repeatSelect" ng-model="selectLanguage">
+                    <select name="repeatSelect" id="repeatSelect" ng-model="selectLanguage" ng-change="getCode(selectLanguage)">
                         <option ng-repeat="option in availableOptions" value="{{option.id}}">{{option.name}}</option>
                     </select>
                 </div><!-- select-lang-->
@@ -24,12 +24,13 @@
             </div><!-- editor-extras -->
 
             <!-- commentttt -->
-            <pre id="editor" style="height: 300px;">function foo(items) {
-                var i;
-                for (i = 0; i &lt; items.length; i++) {
-                alert("Ace Rocks " + items[i]);
-                }
-            }</pre>
+            <pre id="editor" style="height: 300px;">#include &lt;stdio.h&gt;
+int main()
+{
+    printf("Hello World!\n");
+    return 0;
+}
+            </pre>
             <!-- commentttt -->
 
         </div><!-- editor-container -->
