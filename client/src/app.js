@@ -20,8 +20,13 @@ app.controller('CodeTableController',['$scope','$http', function ($scope,$http) 
     $scope.shareUrl = false
     $scope.data = {}
     $scope.getCode = function(lang){
-        $scope.editor.setValue('', 1)
+        $scope.editor.setValue($scope.code[lang], 1)
     }
+    $scope.code = {'C':'','CPP':'','JAVA':'','PYTHON':''}
+    $scope.editor.session.on("change", function(delta){
+        $scope.code[$scope.selectLanguage] = $scope.editor.getValue()
+    })
+
     $scope.share = function(){
         if($scope.data){
          $scope.shareUrl = true
