@@ -26,12 +26,18 @@ class SaveCode(APIView):
         source_code = request.data['source']
         lang = request.data['lang']
         try:
-            codetable.objects.filter(key=key, language=lang).delete()
-            code_table_obj = codetable(key=key, code=source_code, language=lang)
-            code_table_obj.save()
+            code_table_obj = codetable.objects.get(key=key, language=lang)
+            if code_table_obj is not None:
+                code_table_obj.code = source_code
+                code_table_obj.save()
         except Exception as e:
-            print e
-            return Response({"error":"cannot save data with above data set"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            try:
+                codetable.objects.filter(key=key, language=lang).delete()
+                code_table_obj = codetable(key=key, code=source_code, language=lang)
+                code_table_obj.save()
+            except Exception as e:
+                print e
+                return Response({"error":"cannot save data with above data set"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         return Response(request.data, status=status.HTTP_200_OK)
 
 
