@@ -5,8 +5,8 @@ app.controller('CodeTableController',['$scope','$http','$location', function ($s
 
     // checking if url has key, if not, generate the key
 
-    var full_url = window.location.href;
-    var url_part = full_url.split('/')
+    $scope.full_url = window.location.href;
+    var url_part = $scope.full_url.split('/')
     if(url_part.length == 4 && url_part[3]==''){
         function randomString(length, chars) {
             var result = '';
@@ -14,7 +14,7 @@ app.controller('CodeTableController',['$scope','$http','$location', function ($s
             return result;
         }
         var rString = randomString(8, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
-        window.location.href = full_url + rString
+        window.location.href = $scope.full_url + rString
     }
 
     // creating list of languages
